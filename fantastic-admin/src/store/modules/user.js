@@ -39,15 +39,23 @@ const actions = {
   // 获取我的权限
   getPermissions({state, commit}) {
     return new Promise(resolve => {
+      let premissions = [
+        'permission.browse',
+        'permission.create',
+        'permission.edit',
+        'permission.remove'
+      ]
+      commit('setPermissions', premissions)
+      resolve(premissions)
       // 通过 mock 获取权限
-      api.get('mock/member/permission', {
+      /* api.get('mock/member/permission', {
         params: {
           account: state.account
         }
       }).then(res => {
         commit('setPermissions', res.data.permissions)
         resolve(res.data.permissions)
-      })
+      })*/
     })
   }
 }

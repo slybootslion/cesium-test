@@ -35,7 +35,7 @@ requireAll(req)
 
 import './assets/styles/reset.scss'
 
-import './mock'
+// import './mock'
 
 Vue.config.productionTip = false
 
